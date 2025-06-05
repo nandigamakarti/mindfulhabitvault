@@ -77,7 +77,7 @@ function getDayCompletionRatio(day: Date, habits: import('@/types/habit').Habit[
   // Only show status for today or past days
   if (day > today) return 0;
   const dayName = day.toLocaleDateString('en-US', { weekday: 'long' });
-  const dateString = day.toISOString().split('T')[0];
+  const dateString = format(day, "yyyy-MM-dd");
   const scheduledHabits = habits.filter(habit => habit.targetDays.includes(dayName) && new Date(habit.startDate) <= day);
   if (scheduledHabits.length === 0) return 0;
   const completed = scheduledHabits.filter(habit => habit.completedDates.includes(dateString));
@@ -280,9 +280,9 @@ export function FullScreenCalendar({ habits, loading }: FullScreenCalendarProps)
           <div className="hidden w-full border-x lg:grid lg:grid-cols-7 lg:grid-rows-5">
             {days.map((day, dayIdx) => {
               const completionRatio = getDayCompletionRatio(day, habits);
-              const dayEvents = userEvents.filter(e => e.datetime === day.toISOString().split('T')[0]);
+              const dayEvents = userEvents.filter(e => e.datetime === format(day, "yyyy-MM-dd"));
               const dayName = day.toLocaleDateString('en-US', { weekday: 'long' });
-              const dateString = day.toISOString().split('T')[0];
+              const dateString = format(day, "yyyy-MM-dd");
               const scheduledHabits = habits.filter(habit => habit.targetDays.includes(dayName) && new Date(habit.startDate) <= day);
               const isPopoverOpen = hoveredDay && isSameDay(day, hoveredDay);
               return (
@@ -308,7 +308,7 @@ export function FullScreenCalendar({ habits, loading }: FullScreenCalendarProps)
                       (isEqual(day, selectedDay) || isToday(day)) &&
                         "font-semibold",
                       getCellColor(completionRatio),
-                      "flex h-14 flex-col border-b border-r px-3 py-2 hover:bg-muted focus:z-10",
+                      "w-full flex h-14 flex-col border-b border-r px-3 py-2 hover:bg-muted focus:z-10",
                     )}
                   >
                     <time

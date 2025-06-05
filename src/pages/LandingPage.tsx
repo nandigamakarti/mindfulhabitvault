@@ -52,13 +52,15 @@ const LandingPage: React.FC = () => {
             title2="one day at a time"
           />
           {/* This content is positioned to appear towards the bottom of the HeroGeometric display */}
-          <div className="container mx-auto px-4 md:px-6 text-center relative z-20 pb-16 md:pb-24 lg:pb-32 -mt-32 sm:-mt-40 md:-mt-48 lg:-mt-56 xl:-mt-64">
-            {/* Description paragraph removed as per user request */}
+          <div className="container mx-auto px-4 md:px-6 text-center relative z-20 pb-16 md:pb-24 lg:pb-32 -mt-8 sm:-mt-10 md:-mt-12 lg:-mt-14 xl:-mt-16">
+            <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
+              <strong>HabitVault</strong> is a simple and intuitive habit tracker that helps users build and maintain daily routines. With clean visuals, reminders, and progress tracking, it makes habit-building consistent and rewarding.
+            </p>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 1.1, ease: [0.25, 0.4, 0.25, 1] }}
-              className="flex flex-wrap justify-center gap-4"
+              className="flex flex-wrap justify-center gap-4 mt-8"
             >
               <GradientButton asChild size="lg">
                 <Link to="/signup">Get Started</Link>
@@ -83,10 +85,10 @@ const LandingPage: React.FC = () => {
           email="support@habitvault.com"
           officeLabel="Visit Us"
           officeDescription="Come by our office to meet the team."
-          officeAddress="123 Productivity Lane, San Francisco, CA 94105"
+          officeAddress="NRT Centre, Chilakaluripet"
           phoneLabel="Phone Support"
           phoneDescription="Available Monday through Friday, 9 AM - 6 PM PST"
-          phone="+1 (555) 123-4567"
+          phone="+91 98765 43210"
         />
       </main>
 

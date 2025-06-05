@@ -95,7 +95,7 @@ function HeroGeometric({
     };
 
     return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-background">
+        <div className="relative min-h-[60vh] w-full flex items-center justify-center overflow-hidden bg-background">
             <div className="absolute inset-0 bg-gradient-to-br dark:from-indigo-500/[0.05] from-indigo-500/[0.1] via-transparent dark:to-rose-500/[0.05] to-rose-500/[0.1] blur-3xl" />
 
             <div className="absolute inset-0 overflow-hidden">
@@ -218,17 +218,7 @@ function HeroGeometric({
                         </h1>
                     </motion.div>
 
-                    <motion.div
-                        custom={2}
-                        variants={fadeUpVariants}
-                        initial="hidden"
-                        animate="visible"
-                    >
-                        <p className="text-base sm:text-lg md:text-xl dark:text-muted-foreground text-neutral-700 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
-                            Crafting exceptional digital experiences through
-                            innovative design and cutting-edge technology.
-                        </p>
-                    </motion.div>
+
                 </div>
             </div>
 

@@ -33,32 +33,32 @@ function Feature() {
                   {
                     title: "Create Your Habits",
                     description: "Start by defining your habits and setting your goals",
-                    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070"
+                    image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?q=80&w=600&auto=format&fit=crop"
                   },
                   {
                     title: "Track Daily Progress",
                     description: "Log your daily activities and monitor your consistency",
-                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070"
+                    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=600&auto=format&fit=crop"
                   },
                   {
                     title: "View Analytics",
                     description: "Get insights into your habit-forming journey",
-                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070"
+                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop"
                   },
                   {
                     title: "Build Streaks",
                     description: "Maintain momentum with streak tracking",
-                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070"
+                    image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=600&auto=format&fit=crop"
                   },
                   {
                     title: "Get Reminders",
                     description: "Never miss a day with smart notifications",
-                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070"
+                    image: "https://ignitepotential.com/wp-content/uploads/2021/04/1-1024x1024.jpg"
                   },
                   {
                     title: "Celebrate Success",
                     description: "Track your achievements and celebrate milestones",
-                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070"
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzmFeGQr4SS7C6bq3L_XoV2G77CEEAX6lpkNMpJtMYruYKqGIBvGfx50vg_AuSKrMvbTQ&usqp=CAU"
                   }
                 ].map((item, index) => (
                   <CarouselItem key={index}>

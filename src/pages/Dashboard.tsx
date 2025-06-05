@@ -47,7 +47,9 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="container py-8 animate-fade-in">
+    <div className="container py-8 animate-fade-in relative">
+      {/* Subtle background from HeroGeometric design */}
+      <div className="absolute inset-0 bg-gradient-to-br dark:from-indigo-500/[0.05] from-indigo-500/[0.02] via-transparent dark:to-rose-500/[0.05] to-rose-500/[0.02] blur-3xl -z-10" />
       {/* Motivational quote at the top */}
       <div className="mb-6">
         <h1 className="text-3xl font-bold mb-4 text-center text-blue-600">Quote of the Day</h1>

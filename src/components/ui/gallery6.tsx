@@ -11,61 +11,17 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { GradientText } from "@/components/ui/gradient-text";
-
-interface GalleryItem {
-  id: string;
-  title: string;
-  summary: string;
-  url: string;
-  image: string;
-}
+import { articles, Article } from "../../articles"; // Import from new location
 
 interface Gallery6Props {
   heading?: string;
   demoUrl?: string;
-  items?: GalleryItem[];
+  // items prop is no longer needed as we use the imported articles
 }
 
 const Gallery6 = ({
   heading = "Habit Development Resources",
   demoUrl = "/blog",
-  items = [
-    {
-      id: "item-1",
-      title: "The Science of Habit Formation",
-      summary: "Learn about the psychology behind habit formation and how to leverage it for lasting change.",
-      url: "/blog/science-of-habits",
-      image: "https://miro.medium.com/v2/resize:fit:1400/1*JEBbOEaWI25JQKOQczi_TA.png"
-    },
-    {
-      id: "item-2",
-      title: "Building Morning Routines",
-      summary: "Discover how to create effective morning routines that set you up for success throughout the day.",
-      url: "/blog/morning-routines",
-      image: "https://www.proofhub.com/articles/wp-content/uploads/2024/04/best-morning-routine-ideas-for-a-productive-day.jpg"
-    },
-    {
-      id: "item-3",
-      title: "Breaking Bad Habits",
-      summary: "Practical strategies for identifying and overcoming negative habits that hold you back.",
-      url: "/blog/breaking-bad-habits",
-      image: "https://horizon-health.org/app/uploads/2019/05/AdobeStock_68916283-scaled.jpeg"
-    },
-    {
-      id: "item-4",
-      title: "Habit Stacking Guide",
-      summary: "Learn how to build new habits by stacking them onto existing ones for better consistency.",
-      url: "/blog/habit-stacking",
-      image: "https://www.wellable.co/blog/wp-content/uploads/2024/01/Habit-Loop-Final.png"
-    },
-    {
-      id: "item-5",
-      title: "Tracking Progress Effectively",
-      summary: "Master the art of habit tracking to maintain motivation and measure your success.",
-      url: "/blog/habit-tracking",
-      image: "https://i.etsystatic.com/19226491/r/il/06bebd/3723009444/il_fullxfull.3723009444_iqfq.jpg"
-    },
-  ],
 }: Gallery6Props) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -140,35 +96,31 @@ const Gallery6 = ({
           }}
           className="relative left-[-1rem]"
         >
-          <CarouselContent className="-mr-4 ml-8 2xl:ml-[max(8rem,calc(50vw-700px+1rem))] 2xl:mr-[max(0rem,calc(50vw-700px-1rem))]">
-            {items.map((item) => (
-              <CarouselItem key={item.id} className="pl-4 md:max-w-[452px]">
+          <CarouselContent className="-ml-4">
+            {articles.slice(0, 5).map((article: Article) => (
+              <CarouselItem key={article.slug} className="pl-4 md:basis-1/2 lg:basis-1/3">
                 <a
-                  href={item.url}
-                  className="group flex flex-col justify-between"
+                  href={`/blog/${article.slug}`}
+                  className="group block h-full overflow-hidden rounded-md border bg-card text-card-foreground shadow-sm transition-all hover:shadow-lg"
                 >
-                  <div>
-                    <div className="flex aspect-[3/2] overflow-clip rounded-xl">
-                      <div className="flex-1">
-                        <div className="relative h-full w-full origin-bottom transition duration-300 group-hover:scale-105">
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            className="h-full w-full object-cover object-center"
-                          />
-                        </div>
-                      </div>
+                  <div className="overflow-hidden">
+                    <img
+                      src={article.imageUrl}
+                      alt={article.title}
+                      className="h-auto w-full object-cover transition-all group-hover:scale-105 aspect-[16/9]"
+                    />
+                  </div>
+                  <div className="p-4 md:p-6">
+                    <h3 className="mb-2 text-lg font-semibold md:mb-3 md:text-xl">
+                      {article.title}
+                    </h3>
+                    <p className="mb-3 text-sm text-muted-foreground md:mb-4 md:text-base line-clamp-3">
+                      {article.summary}
+                    </p>
+                    <div className="inline-flex items-center gap-1 text-sm font-medium text-primary">
+                      Read more
+                      <ArrowUpRight className="h-4 w-4" />
                     </div>
-                  </div>
-                  <h3 className="mb-2 text-xl font-semibold md:mb-3 md:text-2xl">
-                    <GradientText>{item.title}</GradientText>
-                  </h3>
-                  <div className="mb-8 line-clamp-2 text-sm text-muted-foreground md:mb-12 md:text-base lg:mb-9">
-                    {item.summary}
-                  </div>
-                  <div className="flex items-center text-sm">
-                    Read article{" "}
-                    <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
                   </div>
                 </a>
               </CarouselItem>

@@ -56,7 +56,7 @@ const HabitCard: React.FC<HabitCardProps> = ({ habit }) => {
 
   const handleToggleDay = (date: Date) => {
     if (isAfter(date, new Date())) return; // Prevent future date selection
-    toggleHabitCompletion(habit.id, date.toISOString().split('T')[0]);
+    toggleHabitCompletion(habit.id, format(date, "yyyy-MM-dd"));
   };
 
   const isDateCompleted = (date: Date) => {

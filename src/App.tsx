@@ -17,8 +17,8 @@ import LoginPage from "@/pages/LoginPage";
 import SignupPage from "@/pages/SignupPage";
 import ResetPasswordPage from "@/pages/ResetPasswordPage";
 import LandingPage from "@/pages/LandingPage";
-import BlogListPage from "@/pages/BlogListPage"; // Added import
-import BlogPostPage from "@/pages/BlogPostPage"; // Added import
+import BlogListPage from "@/pages/BlogListPage";
+import BlogPostPage from "@/pages/BlogPostPage";
 
 // App Pages
 import Dashboard from "@/pages/Dashboard";
@@ -48,8 +48,8 @@ const App = () => (
                 <Routes>
                   {/* Public Routes */}
                   <Route path="/" element={<LandingPage />} />
-                  <Route path="/blog" element={<BlogListPage />} /> {/* Added blog list route */}
-                  <Route path="/blog/:articleSlug" element={<BlogPostPage />} /> {/* Added single blog post route */}
+                  <Route path="/blog" element={<BlogListPage />} />
+                  <Route path="/blog/:articleSlug" element={<BlogPostPage />} />
                   
                   {/* Auth Routes */}
                   <Route element={<AuthLayout />}>
