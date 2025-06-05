@@ -75,10 +75,12 @@ function ElegantShape({
 function HeroGeometric({
     badge = "Design Collective",
     title1 = "Elevate Your Digital Vision",
+    titleMiddle = "With Our Expertise",
     title2 = "Crafting Exceptional Websites",
 }: {
     badge?: string;
     title1?: string;
+    titleMiddle?: string;
     title2?: string;
 }) {
     const fadeUpVariants = {
@@ -182,18 +184,7 @@ function HeroGeometric({
 
             <div className="relative z-10 container mx-auto px-4 md:px-6">
                 <div className="max-w-3xl mx-auto text-center">
-                    <motion.div
-                        custom={0}
-                        variants={fadeUpVariants}
-                        initial="hidden"
-                        animate="visible"
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full dark:bg-white/[0.03] bg-black/[0.03] border dark:border-white/[0.08] border-black/[0.08] mb-8 md:mb-12"
-                    >
-                        <Circle className="h-2 w-2 fill-rose-500/80" />
-                        <span className="text-sm text-muted-foreground tracking-wide">
-                            {badge}
-                        </span>
-                    </motion.div>
+
 
                     <motion.div
                         custom={1}
@@ -202,13 +193,17 @@ function HeroGeometric({
                         animate="visible"
                     >
                         <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-b dark:from-white dark:to-white/80 from-black to-black/80">
+                            <span className="bg-clip-text text-transparent whitespace-nowrap bg-gradient-to-b dark:from-white dark:to-white/80 from-black to-black/80">
                                 {title1}
+                            </span>
+                            <br />
+                            <span className="whitespace-nowrap text-primary">
+                                {titleMiddle}
                             </span>
                             <br />
                             <span
                                 className={cn(
-                                    "bg-clip-text text-transparent",
+                                    "bg-clip-text text-transparent whitespace-nowrap",
                                     "dark:bg-gradient-to-r dark:from-indigo-300 dark:via-white/90 dark:to-rose-300",
                                     "bg-gradient-to-r from-indigo-600 via-purple-600 to-rose-600" // Light theme gradient
                                 )}

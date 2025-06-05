@@ -31,10 +31,28 @@ import HabitTrackerPage from "@/pages/HabitTrackerPage";
 import ChallengesPage from "@/pages/ChallengesPage";
 import NotificationsPage from "@/pages/NotificationsPage";
 import NotFound from "@/pages/NotFound";
+import { useEffect } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => {
+  useEffect(() => {
+    const handlePopState = async () => {
+      console.log('Popstate event (back/forward) triggered, signing out.');
+      await supabase.auth.signOut();
+      // Depending on your app's structure, you might want to explicitly redirect
+      // to a login or home page here, though ProtectedRoute might handle this.
+    };
+
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, []);
+
+  return (
   <ThemeContextProvider>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
@@ -87,6 +105,7 @@ const App = () => (
       </BrowserRouter>
     </QueryClientProvider>
   </ThemeContextProvider>
-);
+  );
+};
 
 export default App;

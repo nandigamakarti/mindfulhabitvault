@@ -109,6 +109,14 @@ export default {
 						transform: 'scale(1)' 
 					},
 				},
+        'star-movement-bottom': {
+          '0%': { transform: 'translate(0%, 0%)', opacity: '1' },
+          '100%': { transform: 'translate(-100%, 0%)', opacity: '0' },
+        },
+        'star-movement-top': {
+          '0%': { transform: 'translate(0%, 0%)', opacity: '1' },
+          '100%': { transform: 'translate(100%, 0%)', opacity: '0' },
+        },
 				"gradient-border": {
 				  "0%, 100%": { borderRadius: "37% 29% 27% 27% / 28% 25% 41% 37%" },
 				  "25%": { borderRadius: "47% 29% 39% 49% / 61% 19% 66% 26%" },
@@ -144,6 +152,8 @@ export default {
 				'slide-in': 'slide-in 0.2s ease-out',
 				'appear': 'appear 0.5s ease-out forwards',
 				'appear-zoom': 'appear-zoom 0.8s ease-out forwards',
+        'star-movement-bottom': 'star-movement-bottom linear infinite alternate',
+        'star-movement-top': 'star-movement-top linear infinite alternate',
 			}
 		}
 	},

@@ -11,6 +11,7 @@ import TestimonialsSection from '@/components/landing/TestimonialsSection';
 import { Footer } from '@/components/ui/footer-section';
 import { HeroGeometric } from '@/components/ui/shape-landing-hero';
 import { GradientText } from '@/components/ui/gradient-text';
+import { StarBorder } from "@/components/ui/star-border";
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from '@/hooks/use-theme';
 
@@ -33,12 +34,12 @@ const LandingPage: React.FC = () => {
               <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
             </Button>
-            <GradientButton asChild>
-              <Link to="/login">Log in</Link>
-            </GradientButton>
-            <GradientButton asChild variant="variant">
-              <Link to="/signup">Sign up</Link>
-            </GradientButton>
+            <StarBorder as={Link} to="/login" color="hsl(var(--primary))">
+              Log in
+            </StarBorder>
+            <StarBorder as={Link} to="/signup" color="hsl(var(--primary))">
+              Sign up
+            </StarBorder>
           </div>
         </div>
       </header>
@@ -48,8 +49,9 @@ const LandingPage: React.FC = () => {
         <section className="relative bg-background text-foreground overflow-hidden">
           <HeroGeometric
             badge="HabitVault"
-            title1="Build better habits,"
-            title2="one day at a time"
+            title1="Turn intention into"
+            titleMiddle="action 🎯—"
+          title2="one habit at a time"
           />
           {/* This content is positioned to appear towards the bottom of the HeroGeometric display */}
           <div className="container mx-auto px-4 md:px-6 text-center relative z-20 pb-16 md:pb-24 lg:pb-32 -mt-8 sm:-mt-10 md:-mt-12 lg:-mt-14 xl:-mt-16">
@@ -62,9 +64,14 @@ const LandingPage: React.FC = () => {
               transition={{ duration: 1, delay: 1.1, ease: [0.25, 0.4, 0.25, 1] }}
               className="flex flex-wrap justify-center gap-4 mt-8"
             >
-              <GradientButton asChild size="lg">
-                <Link to="/signup">Get Started</Link>
-              </GradientButton>
+              <StarBorder
+                as={Link}
+                to="/signup"
+                color="hsl(var(--primary))"
+                className="mt-8 md:mt-10 text-lg md:text-xl rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
+                Get Started
+              </StarBorder>
             </motion.div>
           </div>
         </section>

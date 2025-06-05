@@ -10,7 +10,7 @@
     "start": "vite preview --port $PORT",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
-    "postinstall": "npx update-browserslist-db@latest"
+    "postinstall": ""
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

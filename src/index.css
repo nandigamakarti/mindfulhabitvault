@@ -18,7 +18,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
     
-    --primary: 262 83% 58%; /* #7C3AED - A rich purple */
+    --primary: 262 70% 60%; /* Adjusted purple for light theme */
     --primary-foreground: 210 40% 98%;
     
     --secondary: 270 85% 57%; /* #8338EC */
@@ -40,11 +40,11 @@
     --radius: 0.75rem;
 
     /* New theme colors for GradientText and general theming - Light Theme Optimized */
-    --color-1: 330 100% 30%; /* Darker Pink */
-    --color-2: 140 100% 35%; /* Darker Green */
-    --color-3: 210 100% 25%; /* Even Deeper Blue */
-    --color-4: 60 100% 40%;  /* Darker Yellow/Gold */
-    --color-5: 295 100% 35%; /* Darker Purple */
+    --color-1: 220 70% 88%; /* Very Soft Sky Blue */
+    --color-2: 230 65% 86%; /* Soft Periwinkle */
+    --color-3: 240 60% 84%; /* Soft Lavender */
+    --color-4: 250 65% 86%; /* Soft Light Purple */
+    --color-5: 260 70% 88%; /* Soft Light Indigo */
     --brand: 50 100% 40%; /* Slightly Darker punchy yellow for light theme */
   }
  
@@ -80,12 +80,12 @@
     --input: 217 33% 20%;
     --ring: 262 83% 58%;
 
-    /* New theme colors for GradientText and general theming */
-    --color-1: 330 100% 40%; /* Dark Neon Pink */
-    --color-2: 140 100% 55%; /* Bright Electric Green */
-    --color-3: 210 100% 30%; /* Deep Neon Blue */
-    --color-4: 60 100% 70%; /* Light Neon Yellow */
-    --color-5: 295 100% 45%; /* Dark Neon Purple */
+    /* New theme colors for GradientText and general theming - Dark Theme Optimized */
+    --color-1: 230 75% 55%; /* Medium Indigo */
+    --color-2: 240 70% 50%; /* Royal Purple */
+    --color-3: 250 65% 45%; /* Deep Violet */
+    --color-4: 260 70% 50%; /* Rich Purple */
+    --color-5: 270 75% 55%; /* Strong Violet-Blue */
     --brand: 50 100% 50%; /* Bright, punchy yellow - Overriding previous brand */
   }
 }
